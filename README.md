@@ -9,9 +9,9 @@ A thread-safe json/yaml file loader/dumper with automatic file backup.
 - Automatically create and sync to a backup file to avoid file corruption (ex. PC, without UPS, shuts down while writing to a file due to power outage)
 
 ### Limitations
-- Writing to a non-existing file does not lock the file (due to decorator argument passing rule)
+- Writing to a non-existing file does not lock the file (due to file lock implementation with decorator)
 - The file lock (`fcntl`) is an advisory lock which needs to be explicitly respected to by each process and thread accessing the file
-- File path provided to those wrapper functions (`json_safe_load, json_safe_dump, yaml_safe_load, yaml_safe_dump`) must be absolute path
+- File path provided to those wrapper functions (`json_safe_load`, `json_safe_dump`, `yaml_safe_load`, `yaml_safe_dump`) must not contain `~`
 - The file lock acquiring timeout is set to `1` second (feel free to adjust if it is too short)
 
 ### Tested Platform
