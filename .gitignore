@@ -1,0 +1,5 @@
+test/coverage_report
+test/.pytest_cache
+test/.hypothesis
+test/.coverage
+test/file_util/file_access_protector.py
