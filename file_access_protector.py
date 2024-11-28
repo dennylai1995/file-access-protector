@@ -100,9 +100,6 @@ def json_safe_load(file_path: str) -> Union[list, dict]:
         if type(content) != list and type(content) != dict:
             raise ValueError("JSON content is not list or dict!")
 
-        # sync to backup file
-        shutil.copy(file_path, backup_file_path)
-
     except Exception as e:
         print(f'!! json load file [{file_path}] failed ({e})')
         print(f'!! loading backup file [{backup_file_path}]...')
@@ -182,9 +179,6 @@ def yaml_safe_load(file_path: str) -> Union[list, dict]:
 
         if type(content) != list and type(content) != dict:
             raise ValueError("YAML content is not list or dict!")
-
-        # sync to backup file
-        shutil.copy(file_path, backup_file_path)
 
     except Exception as e:
         print(f'!! yaml load file [{file_path}] failed ({e})')
