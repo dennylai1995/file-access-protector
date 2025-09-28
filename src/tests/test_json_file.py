@@ -11,10 +11,10 @@ from unittest.mock import patch
 import pytest
 from assertpy import assert_that
 
-from file_util.file_access_protector import json_safe_dump, json_safe_load
+from file_access_protector.with_backupfile import json_safe_dump, json_safe_load
 
-_temp_test_folder = "./test_data_json"
-_test_file_path = "./test_data.json"
+_temp_test_folder = "./tests/data/test_data_json"
+_test_file_path = "./tests/data/test_data.json"
 _data = {
     "web-app": {
         "servlet": [

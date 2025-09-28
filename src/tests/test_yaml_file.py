@@ -11,10 +11,10 @@ import pytest
 import yaml
 from assertpy import assert_that
 
-from file_util.file_access_protector import yaml_safe_dump, yaml_safe_load
+from file_access_protector.with_backupfile import yaml_safe_dump, yaml_safe_load
 
-_temp_test_folder = "./test_data_yaml"
-_test_file_path = "./test_data.yaml"
+_temp_test_folder = "./tests/data/test_data_yaml"
+_test_file_path = "./tests/data/test_data.yaml"
 _data = {
     "web-app": {
         "servlet": [
